@@ -462,7 +462,7 @@ Don't pop up UI dialogs when prompting
       (fill-paragraph nil region)))
 #+end_src
 ** Treesiter
-#+begin_src elisp
+#+begin_src elisp :tangle no
   (require 'treesit)
   ;; modules build from https://github.com/casouri/tree-sitter-module
   (setq treesit-extra-load-path '("~/Projects/tree-sitter-module/dist"))
@@ -867,6 +867,7 @@ yasnippet
         (add-to-list 'yas-snippet-dirs dir)
         (yas-load-directory dir)))
 #+end_src
+
 * Zencoding
 #+begin_src elisp
   (use-package emmet-mode
@@ -886,7 +887,7 @@ yasnippet
 (setq js-indent-level 2)
 #+end_src
 ** prettier
-#+begin_src elisp
+#+begin_src elisp :tangle no
   (use-package prettier-js
     :ensure t
     :ensure-system-package (prettier . "npm i -g prettier")
@@ -904,7 +905,7 @@ yasnippet
 
 * Typescript
 ** Mode
-#+begin_src elisp
+#+begin_src elisp :tangle no
   (use-package typescript-ts-mode
     :ensure nil
     :ensure-system-package (typescript-language-server . "npm i -g typescript-language-server"))
@@ -928,12 +929,12 @@ yasnippet
              :repo "nverno/ts-comint"))
 #+end_src
 * Ruby
-#+begin_src elisp
+#+begin_src elisp :tangle no
   (use-package flymake-ruby :ensure t)
   (add-hook 'ruby-ts-mode-hook 'flymake-ruby-load)
 #+end_src
 ** Rubocop
-#+begin_src elisp
+#+begin_src elisp :tangle no
   (use-package rubocop
     :ensure t
     :config
@@ -994,7 +995,7 @@ Buttercup
 #+end_src
 * Eglot
 Original code from https://github.com/joaotavora/eglot/discussions/999
-#+begin_src elisp
+#+begin_src elisp :tangle no
   (defun ecma-server-program (_)
     "Decide which server to use for ECMA Script based on project characteristics."
     (cond ((deno-project-p) '("deno" "lsp" :initializationOptions (:enable t :lint t)))
@@ -1182,7 +1183,7 @@ Javascript
 #+end_src
 * Ollama
 ** Ellama
-#+begin_src elisp
+#+begin_src elisp :tangle no
   (use-package ellama
     :ensure t
     :config
@@ -1193,7 +1194,7 @@ Javascript
                      :chat-model "mistral" :embedding-model "mistral")))
 #+end_src
 ** Elisa
-#+begin_src elisp
+#+begin_src elisp :tangle no
   (use-package elisa
     :ensure (elisa
              :type git :host github
