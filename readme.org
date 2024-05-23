@@ -678,7 +678,7 @@ Don't pop up UI dialogs when prompting
 #+end_src
 ** Ox
 *** Slack
-#+begin_src elisp
+#+begin_src elisp :tangle no
   (use-package ox-slack
     :ensure t
     :bind ("C-c e s" . org-slack-export-to-clipboard-as-slack))
